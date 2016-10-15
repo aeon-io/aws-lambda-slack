@@ -58,11 +58,17 @@
         dataType: "json",
         success: function (response) {
             var resp = JSON.parse(response)
-            alert(resp.status);
+
+            if (resp.ok) {
+              $( "#errorMessage" ).text('OK!');
+            }
+            else {
+              $( "#errorMessage" ).text("Error submitting '" + resp.error);
+            }
         }
       });
 
-      $( "#slackDomain" ).text( "<a href=""></a>" )
+      $( "#slackDomain" ).html( '<a href=\"\"></a>' )
       // email input form handler
       $( "#inputEmail" ).on( "focus", function() {
         $( "#inputEmail" ).attr( "style", "" )
