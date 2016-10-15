@@ -59,6 +59,8 @@
         success: function (response) {
             var resp = JSON.parse(response)
 
+            console.log(response);
+
             if (resp.ok) {
               $( "#errorMessage" ).text('OK!');
             }
