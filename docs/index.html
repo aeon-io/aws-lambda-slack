@@ -9,7 +9,7 @@
     <script type="text/javascript">
     // ------------------------------------------------
     // FIXME THESE VALUES SHOULD BE CUSTOMISED
-    var AWS_LAMDBA_URL = ""
+    var AWS_LAMDBA_URL = "https://h6h4muzokb.execute-api.us-west-2.amazonaws.com/prod/invite"
     var SLACK_CHANNEL_IDS = ""
     //
     // ------------------------------------------------
@@ -87,8 +87,11 @@
         else {
           // CORS REST call to to lambda service
           var json = {
-            email : email,
-            channel: SLACK_CHANNEL_IDS
+            email : email
+          }
+
+          if (SLACK_CHANNEL_IDS != '') {
+            json.channel = SLACK_CHANNEL_IDS
           }
 
           $.ajax({
