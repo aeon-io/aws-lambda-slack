@@ -9,7 +9,7 @@
     <script type="text/javascript">
     // ------------------------------------------------
     // FIXME THESE VALUES SHOULD BE CUSTOMISED
-    var AWS_LAMDBA_URL = "https://i808ri2pg0.execute-api.us-west-2.amazonaws.com/prod/invite"
+    var AWS_LAMDBA_URL = "https://c80jd2j2ag.execute-api.us-west-2.amazonaws.com/prod/invite"
     var SLACK_CHANNEL_IDS = ""
     //
     // ------------------------------------------------
@@ -55,6 +55,7 @@
         url: AWS_LAMDBA_URL,
         type: "POST",
         crossDomain: true,
+        contentType: 'application/json',
         dataType: "json",
         xhrFields: {
           withCredentials: true
