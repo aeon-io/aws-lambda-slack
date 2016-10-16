@@ -9,8 +9,8 @@
     <script type="text/javascript">
     // ------------------------------------------------
     // FIXME THESE VALUES SHOULD BE CUSTOMISED
-    var AWS_LAMDBA_URL = "https://2f212p73e6.execute-api.us-west-2.amazonaws.com/prod/invite"
-    var SLACK_CHANNEL_IDS = ""
+    var AWS_LAMDBA_URL = "https://tt53ipscxa.execute-api.us-west-2.amazonaws.com/prod/invite";
+    var SLACK_CHANNEL_IDS = "";
     //
     // ------------------------------------------------
     </script>
@@ -72,12 +72,12 @@
         }
       });
 
-      $( "#slackDomain" ).html( '<a href=\"\"></a>' )
+      $( "#slackDomain" ).html( '<a href=\"\"></a>' );
       // email input form handler
       $( "#inputEmail" ).on( "focus", function() {
         $( "#inputEmail" ).attr( "style", "" )
         $( "#errorMessage" ).text( "" )
-      })
+      });
 
       $( "#inputForm" ).submit(function( event ) {
         // prevent default action
@@ -88,8 +88,8 @@
 
         // check value is not empty
         if (email == '' || !validEmail(email) ) {
-          $( "#inputEmail" ).attr( "style", "border: 1px solid #f00" )
-          $( "#errorMessage" ).text( "This '" + email + "' doesn't look like a valid email, please try again...")
+          $( "#inputEmail" ).attr( "style", "border: 1px solid #f00" );
+          $( "#errorMessage" ).text( "This '" + email + "' doesn't look like a valid email, please try again...");
         }
         /*
          * TODO check value looks like an email address
