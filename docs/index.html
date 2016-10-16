@@ -82,6 +82,7 @@
       $( "#inputForm" ).submit(function( event ) {
         // prevent default action
         event.preventDefault();
+        $( "#errorMessage" ).text('Sending...');
 
         // get value from field
         var email = $( "#inputEmail" ).val()
