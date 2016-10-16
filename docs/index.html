@@ -108,7 +108,7 @@
             data: JSON.stringify(json),
             error: function (xhr, errStatus) {
               console.log('ERROR:' + errStatus);
-              console.log('ERROR:' + xhr);
+              console.log('ERROR:' + JSON.stringify(xhr));
               $( "#inputEmail" ).attr( "style", "border: 1px solid #f00" )
               $( "#errorMessage" ).text( "Error submitting '" + email + "'; status: " + errStatus)
               // alert("error sending " + addr);
