@@ -55,11 +55,7 @@
         url: AWS_LAMDBA_URL,
         type: "POST",
         crossDomain: true,
-        contentType: 'application/json',
         dataType: "json",
-        xhrFields: {
-          withCredentials: true
-        },
         success: function (response) {
           console.log('SUCCESS:' + response);
           var resp = JSON.parse(response)
@@ -69,10 +65,6 @@
           else {
             $( "#errorMessage" ).text("Error submitting '" + resp.error);
           }
-        },
-        error: function (error) {
-          console.log('ERROR:', error);
-          $( "#errorMessage" ).text(error);
         }
       });
 
@@ -111,6 +103,7 @@
           $.ajax({
             data: JSON.stringify(json),
             error: function (xhr, errStatus) {
+              console.log('ERROR:' + errStatus);
               $( "#inputEmail" ).attr( "style", "border: 1px solid #f00" )
               $( "#errorMessage" ).text( "Error submitting '" + email + "'; status: " + errStatus)
               // alert("error sending " + addr);
