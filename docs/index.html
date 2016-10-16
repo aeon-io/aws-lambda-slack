@@ -9,7 +9,7 @@
     <script type="text/javascript">
     // ------------------------------------------------
     // FIXME THESE VALUES SHOULD BE CUSTOMISED
-    var AWS_LAMDBA_URL = "https://l2bbvr8t7d.execute-api.us-west-2.amazonaws.com/prod/invite";
+    var AWS_LAMDBA_URL = "https://q7epwc6o74.execute-api.us-west-2.amazonaws.com/prod/invite";
     var SLACK_CHANNEL_IDS = "";
     //
     // ------------------------------------------------
@@ -64,7 +64,7 @@
           console.log('SUCCESS:' + response);
           var resp = JSON.parse(response)
           if (resp.ok) {
-            $( "#errorMessage" ).text('OK!');
+            $( "#errorMessage" ).text('Now check your email!');
           }
           else {
             $( "#errorMessage" ).text("Error submitting '" + resp.error);
