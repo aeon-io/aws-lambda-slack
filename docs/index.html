@@ -82,7 +82,6 @@
       $( "#inputForm" ).submit(function( event ) {
         // prevent default action
         event.preventDefault();
-        $( "#errorMessage" ).text('Sending...');
 
         // get value from field
         var email = $( "#inputEmail" ).val()
@@ -104,6 +103,8 @@
           if (SLACK_CHANNEL_IDS != '') {
             json.channel = SLACK_CHANNEL_IDS
           }
+
+          $( "#errorMessage" ).text('Sending...');
 
           $.ajax({
             data: JSON.stringify(json),
