@@ -24,9 +24,10 @@ Usage:
   $SCRIPT_NAME <options> [ create | update | delete | describe | geturls | validate | test <email> ]
 
 Options:
-  -d, --domain     The Slack team domain
-  -t, --token      The Slack authentication token
-  -v, --verbose    Display verbose output
+  -d     The Slack team domain
+  -t     The Slack authentication token
+  -o     The full origin domain (e.g. http://www.myhost.com/)
+  -v     Display verbose output
 
 EOF
 }
@@ -207,7 +208,7 @@ if [ ! `command -v aws` ]; then
   exit 1
 fi
 
-AWS_CLI=`which aws`
+AWS_CLI=`command -v aws`
 
 if [ ! `command -v jq` ]; then
   log_error "The 'jq' command was not found."
